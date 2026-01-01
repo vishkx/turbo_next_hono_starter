@@ -1,135 +1,191 @@
-# Turborepo starter
+# 🚀 turbo_next_hono_starter
 
-This Turborepo starter is maintained by the Turborepo core team.
+A modern, full-stack monorepo starter template powered by **Turborepo**, **Next.js**, **Hono**, **Bun**, and **ShadCN UI**.
 
-## Using this example
+![Turborepo](https://img.shields.io/badge/Turborepo-EF4444?style=for-the-badge&logo=turborepo&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![Hono](https://img.shields.io/badge/Hono-E36002?style=for-the-badge&logo=hono&logoColor=white)
+![Bun](https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white)
+![ShadCN](https://img.shields.io/badge/ShadCN_UI-000000?style=for-the-badge&logo=shadcnui&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
-Run the following command:
+---
 
-```sh
-npx create-turbo@latest
+## ✨ Features
+
+- ⚡ **Turborepo** - High-performance monorepo build system with caching
+- 🌐 **Next.js 16** - React framework for production with App Router
+- 🔥 **Hono** - Ultrafast, lightweight web framework for the API
+- 🍞 **Bun** - All-in-one JavaScript runtime & package manager
+- 🎨 **ShadCN UI** - Beautiful, accessible React components
+- 📦 **Shared Packages** - Reusable UI components and configs
+- 🔒 **TypeScript** - Full type safety across the entire stack
+- 🎯 **ESLint + Prettier** - Code quality and formatting
+
+---
+
+## 📁 Project Structure
+
+```
+turbo_next_hono_starter/
+├── apps/
+│   ├── web/              # Next.js frontend (port 3001)
+│   └── api/              # Hono API backend (port 3000)
+├── packages/
+│   ├── ui/               # Shared React component library
+│   ├── eslint-config/    # Shared ESLint configurations
+│   └── typescript-config/# Shared TypeScript configurations
+├── package.json
+├── turbo.json
+└── README.md
 ```
 
-## What's inside?
+---
 
-This Turborepo includes the following packages/apps:
+## 🚀 Getting Started
 
-### Apps and Packages
+### Prerequisites
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- [Bun](https://bun.sh/) (v1.0+)
+- [Node.js](https://nodejs.org/) (v18+)
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### Installation
 
-### Utilities
+```bash
+# Clone the repository
+git clone https://github.com/vishkx/turbo_next_hono_starter.git
+cd turbo_next_hono_starter
 
-This Turborepo has some additional tools already setup for you:
+# Install dependencies
+bun install
+```
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+### Development
+
+```bash
+# Run all apps in development mode
+bun dev
+
+# Or run specific apps
+bun dev --filter=web   # Frontend only
+bun dev --filter=api   # API only
+```
+
+| App | URL |
+|-----|-----|
+| 🌐 Web (Next.js) | http://localhost:3001 |
+| 🔥 API (Hono) | http://localhost:3000 |
 
 ### Build
 
-To build all apps and packages, run the following command:
+```bash
+# Build all apps and packages
+bun run build
 
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+# Build specific app
+bun run build --filter=web
 ```
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+---
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+## 🛠️ Tech Stack
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+| Layer | Technology | Description |
+|-------|------------|-------------|
+| **Monorepo** | Turborepo | Build orchestration & caching |
+| **Frontend** | Next.js 16 | React framework with App Router |
+| **Backend** | Hono | Ultrafast web framework |
+| **Runtime** | Bun | JavaScript runtime & bundler |
+| **UI** | ShadCN UI | Accessible component library |
+| **Styling** | Tailwind CSS | Utility-first CSS framework |
+| **Language** | TypeScript | Type-safe JavaScript |
 
-### Develop
+---
 
-To develop all apps and packages, run the following command:
+## 📦 Apps & Packages
 
-```
-cd my-turborepo
+### Apps
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
+- **`apps/web`** - Next.js frontend application
+  - ShadCN UI components
+  - Tailwind CSS styling
+  - App Router with layouts
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
+- **`apps/api`** - Hono backend API
+  - RESTful API endpoints
+  - CORS configured
+  - Hot reload with Bun
 
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+### Packages
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
+- **`@repo/ui`** - Shared React component library
+- **`@repo/eslint-config`** - ESLint configurations
+- **`@repo/typescript-config`** - TypeScript configurations
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
+---
 
-### Remote Caching
+## 🔧 Configuration
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+### Environment Variables
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+Create `.env.local` files in respective apps:
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+```bash
+# apps/web/.env.local
+NEXT_PUBLIC_API_URL=http://localhost:3000
 
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
+# apps/api/.env.local
+PORT=3000
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+### Ports
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+| App | Default Port |
+|-----|--------------|
+| Web | 3001 |
+| API | 3000 |
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
+---
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
+## 📝 Scripts
 
-## Useful Links
+| Command | Description |
+|---------|-------------|
+| `bun dev` | Start all apps in development mode |
+| `bun run build` | Build all apps and packages |
+| `bun run lint` | Lint all apps and packages |
+| `bun run format` | Format code with Prettier |
+| `bun run check-types` | Type-check all packages |
 
-Learn more about the power of Turborepo:
+---
 
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🔗 Useful Links
+
+- [Turborepo Documentation](https://turborepo.com/docs)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Hono Documentation](https://hono.dev/)
+- [Bun Documentation](https://bun.sh/docs)
+- [ShadCN UI Documentation](https://ui.shadcn.com/)
+
+---
+
+<p align="center">
+  Made with ❤️ using Turborepo + Next.js + Hono + Bun + ShadCN
+</p>

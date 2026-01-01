@@ -1,5 +1,5 @@
 {
-  "name": "clonegpt",
+  "name": "turbo_next_hono_starter",
   "private": true,
   "scripts": {
     "build": "turbo run build",
