@@ -3,11 +3,13 @@
 import { ComponentExample } from '@/components/component-example'
 import React, { useEffect, useState } from 'react'
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
+
 export default function HomePage() {
   const [message, setMessage] = useState<string>('')
 
   useEffect(() => {
-    fetch('http://localhost:3000/')
+    fetch(`${API_URL}/`)
       .then((res) => res.text())
       .then((data) => {
         setMessage(data)

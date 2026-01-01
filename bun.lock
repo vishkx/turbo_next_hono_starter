@@ -12,11 +12,13 @@
     },
     "apps/api": {
       "name": "api",
+      "version": "0.1.0",
       "dependencies": {
         "hono": "^4.11.3",
       },
       "devDependencies": {
         "@types/bun": "latest",
+        "typescript": "^5.9.2",
       },
     },
     "apps/web": {
